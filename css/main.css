@@ -59,7 +59,7 @@ table {
 	============================================== */
 
 body {
-	background: yellow;
+	background: tan;
 }
 
 .container {
@@ -70,27 +70,32 @@ body {
 /* Typography */
 
 div, h1, h2, a {
-	color: rgba(0,255,0,1);
+	color: rgb(255,220,230);
 }
 
 .header h1 {
-	margin-top: 80px;
-	margin-bottom: 40px;
-	font-family: 'Alegreya Sans', sans-serif;
-	font-size: 190px;
+	position: fixed;
+	top: 80px;
+	width: 100%;
+	font-family: 'Exo', sans-serif;
+	font-size: 150px;
 	font-weight: 700;
 	font-style: italic;
 	text-align: center;
+	color: rgba(255,255,255,0.8);
+	text-shadow: 0 0 20px rgb(255,220,230);
+	z-index: -10;
 }
 
 .header h2 {
 	width: 90%;
 	margin-left: 5%;
+	padding-top: 250px;
 	padding-bottom: 80px;
 	font-family: 'Alegreya', serif;
 	font-size: 70px;
 	text-align: center;
-	border-bottom: 4px solid rgba(0,255,0,1);
+	border-bottom: 4px solid rgb(255,220,230);
 }
 
 .links,
@@ -112,7 +117,7 @@ div, h1, h2, a {
 
 .projects h1 {
 	margin-bottom: 70px;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Exo', sans-serif;
 	font-size: 100px;
 	font-weight: 700;
 	font-style: italic;
@@ -166,11 +171,11 @@ div, h1, h2, a {
 }
 
 .links {
+	padding-top: 30px;
 	width: 90%;
 	margin-left: 5%;
 	margin-bottom: 0;
-	padding-bottom: 80px;
-	border-bottom: 4px solid rgba(0,255,0,1);
+	/*border-bottom: 4px solid rgb(255,220,230);*/
 	font-size: 55px;
 	z-index: 100;
 }
@@ -178,9 +183,45 @@ div, h1, h2, a {
 .projects {
 	position: relative;
 	margin-top: 0;
-	padding-top: 100px;
+	padding-top: 200px;
 	width: 100%;
-	background-color: rgba(255,255,0,0.85);
+	background: none; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(0,0,0,0) 5%, lightblue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgba(0,0,0,0) 5%, lightblue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgba(0,0,0,0) 5%, lightblue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgba(0,0,0,0) 5%, lightblue); /* Standard syntax */
 	z-index: 1000;
-	padding-bottom: 200px;
+	padding-bottom: 160px;
+}
+
+/* Resume */
+
+.resume {
+	position: fixed;
+	top: 40px;
+	width: 80%;
+	bottom: 40px;
+	left: -100%;
+	background: tan;
+	box-shadow: 0 0 40px white;
+	
+	border-radius: 20px;
+	-web-kit-border-radius: 20px;
+
+	-webkit-transition: left 0.5s; /* Safari */
+  transition: left 0.5s;
+
+}
+
+.resume.open {
+	left: 10%;
+}
+
+#close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	width: 40px;
+	height: 40px;
+	background-color: blue;
 }
