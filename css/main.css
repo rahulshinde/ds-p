@@ -73,13 +73,17 @@ div, h1, h2, a {
 	color: rgb(255,220,230);
 }
 
+a:hover {
+	cursor: pointer;
+}
+
 .header h1 {
 	position: fixed;
 	top: 80px;
 	width: 100%;
-	font-family: 'Exo', sans-serif;
+	font-family: 'Alegreya', serif;
 	font-size: 150px;
-	font-weight: 700;
+	font-weight: 900;
 	font-style: italic;
 	text-align: center;
 	color: rgba(255,255,255,0.8);
@@ -117,7 +121,7 @@ div, h1, h2, a {
 
 .projects h1 {
 	margin-bottom: 70px;
-	font-family: 'Exo', sans-serif;
+	font-family: 'Alegreya', serif;
 	font-size: 100px;
 	font-weight: 700;
 	font-style: italic;
@@ -130,6 +134,63 @@ div, h1, h2, a {
 	font-size: 30px;
 	text-align: center;
 	text-decoration: none;
+}
+
+.date {
+	margin-bottom: 20px;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.resume h1 {
+	text-align: center;
+	padding-left: 20px;
+	font-family: 'Alegreya Sans', sans-serif;
+	margin-bottom: 15px;
+	font-weight: 500;
+	font-size: 44px;
+	text-transform: uppercase;
+}
+
+.resume h2,
+.resume h3 {
+	text-align: justify;
+	font-family: 'Alegreya', serif;
+	font-size: 24px;
+	line-height: 30px;
+	margin-bottom: 8px;
+}
+
+.resume p {
+	font-family: 'Alegreya', serif;
+	font-size: 20px;
+	line-height: 25px;
+	font-style: italic;
+	font-weight: 400;
+}
+
+.artist_statement h1 {
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 40px;
+	text-align: justify;
+	font-family: 'Alegreya', serif;
+	font-size: 24px;
+	line-height: 30px;
+	margin-bottom: 8px;
+}
+
+.artist_statement h2 {
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 50px;
+	text-align: justify;
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 24px;
+	line-height: 30px;
+	margin-bottom: 20px;
 }
 
 /* IMG */
@@ -180,6 +241,8 @@ div, h1, h2, a {
 	z-index: 100;
 }
 
+/* Projects */
+
 .projects {
 	position: relative;
 	margin-top: 0;
@@ -194,22 +257,40 @@ div, h1, h2, a {
 	padding-bottom: 160px;
 }
 
+#image1 {
+	display: none;
+	position: absolute;
+	bottom: 100px;
+	left: 34%;
+	width: 250px;
+	z-index: -1;
+}
+
+#link1:hover #image1 {
+	display: block
+}
+
 /* Resume */
 
 .resume {
 	position: fixed;
+	overflow-y: scroll;
 	top: 40px;
 	width: 80%;
 	bottom: 40px;
 	left: -100%;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	background: tan;
-	box-shadow: 0 0 40px white;
+	box-shadow: 0 0 80px white;
 	
 	border-radius: 20px;
 	-web-kit-border-radius: 20px;
 
 	-webkit-transition: left 0.5s; /* Safari */
   transition: left 0.5s;
+
+  z-index: 1000000;
 
 }
 
@@ -218,10 +299,70 @@ div, h1, h2, a {
 }
 
 #close {
-	position: absolute;
-	top: 20px;
-	right: 30px;
+	position: fixed;
+	top: 60px;
+	right: 150px;
 	width: 40px;
 	height: 40px;
-	background-color: blue;
+	display: none;
+	background: url(../img/png/close.png);
+}
+
+#close:hover {
+	cursor: pointer;
+}
+
+.tab1 {
+	width: 60%;
+	margin-left: 20%;
+	margin-bottom: 50px;
+}
+
+.tab2 {
+	margin-bottom: 10px;
+	padding-left: 60px;
+}
+
+.exhibition_name {
+	padding-left: 20px;
+}
+
+/* Artist Statement */
+.artist_statement {
+	position: fixed;
+	overflow-y: scroll;
+	top: 40px;
+	width: 80%;
+	bottom: 40px;
+	right: -100%;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: tan;
+	box-shadow: 0 0 80px white;
+	
+	border-radius: 20px;
+	-web-kit-border-radius: 20px;
+
+	-webkit-transition: right 0.5s; /* Safari */
+  transition: right 0.5s;
+  z-index: 1000000;
+
+}
+
+.artist_statement.open {
+	right: 10%;
+}
+
+#close2 {
+	position: fixed;
+	top: 60px;
+	right: 150px;
+	width: 40px;
+	height: 40px;
+	display: none;
+	background: url(../img/png/close.png);
+}
+
+#close2:hover {
+	cursor: pointer;
 }
